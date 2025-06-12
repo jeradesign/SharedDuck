@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+import GroupActivities
+
+struct DuckActivity: GroupActivity, Transferable {
+    var metadata = GroupActivityMetadata()
+}
 
 @main
 struct SharedDuckApp: App {
@@ -16,6 +21,8 @@ struct SharedDuckApp: App {
         WindowGroup {
             ContentView()
                 .environment(appModel)
+            ShareLink(item: DuckActivity(), preview: SharePreview("Share the Duck"))
+                .hidden()
         }
         .windowStyle(.volumetric)
 

@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 import RealityKitContent
+import GroupActivities
 
 struct ContentView: View {
 
@@ -29,6 +30,11 @@ struct ContentView: View {
         .gesture(TapGesture().targetedToAnyEntity().onEnded { _ in
             enlarge.toggle()
         })
+        .task {
+            for await session in DuckActivity.sessions() {
+                session.join()
+            }
+        }
     }
 }
 
