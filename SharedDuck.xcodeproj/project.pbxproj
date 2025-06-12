@@ -13,6 +13,8 @@
 /* Begin PBXFileReference section */
 		424999BF2DFB7FEF00D1D175 /* SharedDuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedDuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		424999C32DFB7FEF00D1D175 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		427854062DFB8BA70005B3C9 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		427854072DFB8BA70005B3C9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -51,6 +53,8 @@
 		424999B62DFB7FEF00D1D175 = {
 			isa = PBXGroup;
 			children = (
+				427854062DFB8BA70005B3C9 /* LICENSE.txt */,
+				427854072DFB8BA70005B3C9 /* README.md */,
 				424999C12DFB7FEF00D1D175 /* SharedDuck */,
 				424999C22DFB7FEF00D1D175 /* Packages */,
 				424999C02DFB7FEF00D1D175 /* Products */,
