@@ -13,6 +13,7 @@ import GroupActivities
 struct ContentView: View {
 
     @State private var enlarge = false
+    @State private var session: GroupSession<DuckActivity>? = nil
 
     var body: some View {
         RealityView { content in
@@ -32,6 +33,7 @@ struct ContentView: View {
         })
         .task {
             for await session in DuckActivity.sessions() {
+                self.session = session
                 session.join()
             }
         }
