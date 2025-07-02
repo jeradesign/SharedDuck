@@ -14,6 +14,7 @@ struct ContentView: View {
 
     @State private var enlarge = false
     @State private var session: GroupSession<DuckActivity>? = nil
+    @Environment(\.openWindow) private var openWindow
 
     var body: some View {
         RealityView { content in
@@ -31,6 +32,9 @@ struct ContentView: View {
         .gesture(TapGesture().targetedToAnyEntity().onEnded { _ in
             enlarge.toggle()
         })
+        .onAppear {
+            openWindow(id: "control-panel")
+        }
         .task {
             for await session in DuckActivity.sessions() {
                 self.session = session

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import GroupActivities
+import AVFAudio
+import AVFoundation
 
 struct DuckActivity: GroupActivity, Transferable {
     var metadata: GroupActivityMetadata {
@@ -22,6 +24,26 @@ struct SharedDuckApp: App {
 
     @State private var appModel = AppModel()
 
+    let quackPlayer: AVAudioPlayer?
+    
+    init() {
+        print("init called")
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback)
+            try session.setActive(true)
+            try session.setIntendedSpatialExperience(.bypassed)
+            let path = Bundle.main.path(forResource: "quack", ofType: "mp3")
+            let url = URL(fileURLWithPath: path!)
+            let data = try Data(contentsOf: url)
+            quackPlayer = try AVAudioPlayer(contentsOf: url)
+            quackPlayer?.prepareToPlay()
+        } catch {
+            print("Error = \(error)")
+            quackPlayer = nil
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -30,6 +52,11 @@ struct SharedDuckApp: App {
                 .hidden()
         }
         .windowStyle(.volumetric)
+        
+        Window("Control Panel", id: "control-panel") {
+            ControlPanelView(quackPlayer: quackPlayer!)
+        }
+        .windowResizability(.contentSize)
 
         ImmersiveSpace(id: appModel.immersiveSpaceID) {
             ImmersiveView()

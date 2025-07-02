@@ -23,6 +23,12 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
 IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Duck Model by Ryan King Art licensed under Creative Commons Attribution License
+Duck Model by Ryan King Art
 https://sketchfab.com/3d-models/free-rubber-duck-3d-model-c5739cd7a94547dcb091bdd527536977
+License:
 https://creativecommons.org/licenses/by/4.0/
+
+Quack sound from:
+https://freesound.org/people/Tabby+Gus./sounds/515408/
+License:
+https://creativecommons.org/publicdomain/zero/1.0/
