@@ -10,6 +10,7 @@ import GroupActivities
 import AVFAudio
 import AVFoundation
 
+nonisolated
 struct DuckActivity: GroupActivity, Transferable {
     var metadata: GroupActivityMetadata {
         var metadata = GroupActivityMetadata()
